@@ -5,7 +5,11 @@ var burger = require("./../models/burger");
 
 router.get("/", function(req, res) {
     console.log("Test!");
-    res.render("Hello, World!");
+    var test = {
+        t1: "test1",
+        t2: "test2"
+    };
+    res.render("index", test);
 });
 
 

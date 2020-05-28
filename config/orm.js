@@ -5,21 +5,21 @@
 var connection = require("./connection");
 
 
-var selectAll = function() {
+// var selectAll = function() {
+//     return;
+// };
 
-};
+// var insertOne = function() {
+//     return;
+// };
 
-var insertOne = function() {
-    
-};
-
-var updateOne = function() {
-    
-};
+// var updateOne = function() {
+//     return;
+// };
 
 
-module.exports = {
-    selectAll = selectAll,
-    insertOne = insertOne,
-    updateOne = updateOne
-};
+// module.exports = {
+//     selectAll = selectAll,
+//     insertOne = insertOne,
+//     updateOne = updateOne
+// };
