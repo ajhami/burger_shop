@@ -1,0 +1,31 @@
+body {
+    background-color: #b9b4a594;
+}
+
+.jumbotron {
+    background-color: #f1be2fa8;
+    justify-self: center;
+    margin: auto;
+    margin-top: 20px;
+    width: 60%;
+}
+
+.jumbotron_text {
+    text-align: center;
+    font-size: 40px;
+}
+
+.burger_img {
+    justify-content: center;
+    height: 120px;
+    width: 120px;
+}
+
+hr {
+    width: 50%;
+}
+
+.jumbo_p {
+    text-align: center;
+    font-size: 20px;
+}

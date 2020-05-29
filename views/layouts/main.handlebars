@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-		{{!-- <link rel="stylesheet" href="/assets/css/style.css" type="text/css" /> --}}
-		<title>Eat-Da-Burger!</title>
-        <link rel="icon" href="assets/img/crazy_burger_clipart.png">
-		{{!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> --}}
-        <link 
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-            crossorigin="anonymous"
-        >
-        <script src="https://code.jquery.com/jquery.js"></script>
-		{{!-- <script src="/assets/js/cats.js"></script> --}}
-	</head>
-	<body>
-		{{{ body }}}
-	</body>
+    <meta charset="UTF-8">
+    <title>Eat-Da-Burger!</title>
+    <link rel="icon" href="assets/img/crazy_burger_clipart.png">
+    {{!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> --}}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    {{!-- <script src="/assets/js/cats.js"></script> --}}
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="jumbotron_text"><img class="burger_img" src="assets/img/crazy_burger_clipart.png" alt="Burger Img">
+            Eat-Da-Burger!</h1>
+        <hr>
+        <p class="jumbo_p">Enjoy your time at our restaurant by ordering and devouring burgers as you please!</p>
+    </div>
+    <div class="container">
+        {{{ body }}}
+    </div>
+</body>
+
 </html>
