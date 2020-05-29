@@ -2,7 +2,7 @@
 
 <form>
     <div class="form-group">
-    <input type="burger" id="newBurger", placeholder="What would you like?">
+        <input type="burger" id="newBurger" , placeholder="What would you like?">
     </div>
     <button type="submit" class="btn btn-primary">
         Place Order
@@ -20,7 +20,18 @@
 
 {{!-- Add ul #each --}}
 
+<h2>All Burgers:</h2>
 
+<ul>
+
+</ul>
+{{#each burgers}}
+    <li>
+        {{ burger_name }}
+    </li>
+{{/each}}
+
+{{!-- Add ul #each --}}
 
 {{!-- <h2>{{ t1 }}</h2>
 

@@ -9,7 +9,15 @@ router.get("/", function(req, res) {
         t1: "test1",
         t2: "test2"
     };
-    res.render("index", test);
+    burger.selectAll(function(data) {
+        console.log("Made it to callback.");
+        var allBurgers = {
+            burgers: data
+        };
+        console.log(allBurgers);
+        res.render("index", allBurgers);
+    })
+    // res.render("index", test);
 });
 
 
