@@ -14,22 +14,54 @@
 
 <h2>Burgers Devoured:</h2>
 
+<ul>
+{{#each burgers}}
+    {{#if devoured}}
+        <li>
+            {{ burger_name }}
+            <button class="remake_burger btn btn-success" data-id="{{id}}" data-newdev="{{devoured}}">
+                Reorder
+            </button>
+            <button class="delete_burger btn btn-danger" data-id="{{id}}">
+                Delete
+            </button>
+        </li>
+    {{/if}}
+{{/each}}
+</ul>
+
 {{!-- Add ul #each --}}
 
 <h2>Burgers Ready:</h2>
 
-{{!-- Add ul #each --}}
+<ul>
+{{#each burgers}}
+    {{#unless devoured}}
+        <li>
+            {{ burger_name }}
+            <button class="devour_burger btn btn-success" data-id="{{id}}" data-newdev="{{devoured}}">
+                Devour!
+            </button>
+            <button class="delete_burger btn btn-danger" data-id="{{id}}">
+                Delete
+            </button>
+        </li>
+    {{/unless}}
+{{/each}}
+</ul>
 
+{{!-- 
 <h2>All Burgers:</h2>
 
 <ul>
-
-</ul>
 {{#each burgers}}
     <li>
         {{ burger_name }}
+        <button>button 1</button>
+        <button>button 2</button>
     </li>
 {{/each}}
+</ul> --}}
 
 {{!-- Add ul #each --}}
 
