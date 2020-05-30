@@ -29,13 +29,15 @@ router.post("/api/burgers", function(req, res) {
 });
 
 router.put("/api/burgers/:id", function(req, res) {
+    console.log("Mark!");
+
     var idMatched = req.params.id;
 
     console.log("Switch at id ", idMatched);
     var isDevoured = "";
 
     console.log("Devoured = ", req.body.devoured);
-    if(req.body.devoured === false) {
+    if(req.body.devoured == false) {
         isDevoured = true;
     }
     else {

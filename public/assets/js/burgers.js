@@ -34,7 +34,7 @@ $(function(){
         var isDevoured = {
             devoured: $(this).data("devoured")
         };
-
+        
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: isDevoured
@@ -45,7 +45,7 @@ $(function(){
     }
 
     $(".remake_burger").on("click", changeDevouredStatus);
-
+    $(".devour_burger").on("click", changeDevouredStatus);
 
 
 
