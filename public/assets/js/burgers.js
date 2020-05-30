@@ -28,7 +28,7 @@ $(function(){
 
     })
 
-    $(".remake_burger").on("click", function(event) {
+    changeDevouredStatus = function(event) {
         var id = $(this).data("id");
         
         var isDevoured = {
@@ -42,7 +42,10 @@ $(function(){
             location.reload();
         })        
 
-    })
+    }
+
+    $(".remake_burger").on("click", changeDevouredStatus);
+
 
 
 
