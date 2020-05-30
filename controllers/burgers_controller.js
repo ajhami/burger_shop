@@ -20,6 +20,14 @@ router.get("/", function(req, res) {
     // res.render("index", test);
 });
 
+router.post("/api/burgers", function(req, res) {
+    console.log("Test!");
+    burger.insertOne(req.body.burger_name, function(result) {
+        res.json({ id: result.id });
+        // res.send("/");
+    });
+});
+
 
 
 

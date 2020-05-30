@@ -41,9 +41,6 @@ li {
 }
 
 .remake_burger, .devour_burger, .delete_burger {
-    align-text: center;
-    justify-text: center;
     margin-bottom: 4px;
-    height: 80%;
     font-size: 10px;
 }
