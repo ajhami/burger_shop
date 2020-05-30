@@ -26,10 +26,23 @@ $(function(){
             location.reload();
         })
 
-
     })
 
+    $(".remake_burger").on("click", function(event) {
+        var id = $(this).data("id");
+        
+        var isDevoured = {
+            devoured: $(this).data("devoured")
+        };
 
+        $.ajax("/api/burgers/" + id, {
+            type: "PUT",
+            data: isDevoured
+        }).then(function() {
+            location.reload();
+        })        
+
+    })
 
 
 

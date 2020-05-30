@@ -19,7 +19,7 @@
     {{#if devoured}}
         <li>
             {{ burger_name }}
-            <button class="remake_burger btn btn-success" data-id="{{id}}" data-newdev="{{devoured}}">
+            <button class="remake_burger btn btn-success" data-id="{{id}}" data-devoured="{{devoured}}">
                 Reorder
             </button>
             <button class="delete_burger btn btn-danger" data-id="{{id}}">
@@ -39,7 +39,7 @@
     {{#unless devoured}}
         <li>
             {{ burger_name }}
-            <button class="devour_burger btn btn-success" data-id="{{id}}" data-newdev="{{devoured}}">
+            <button class="devour_burger btn btn-success" data-id="{{id}}" data-devoured="{{devoured}}">
                 Devour!
             </button>
             <button class="delete_burger btn btn-danger" data-id="{{id}}">

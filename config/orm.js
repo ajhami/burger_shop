@@ -4,24 +4,24 @@
 
 var connection = require("./connection");
 
-function objToSql(obj) {
-    var arr = [];
+// function objToSql(obj) {
+//     var arr = [];
 
-    for(var key in obj) {
-        var val = obj[key];
+//     for(var key in obj) {
+//         var val = obj[key];
 
-        if(Object.hasOwnProperty.call(obj, key)) {
+//         if(Object.hasOwnProperty.call(obj, key)) {
 
-            if(typeof val === "string" && val.indexOf(" ") >= 0) {
-                val = "'" + val + "'";
-            }
+//             if(typeof val === "string" && val.indexOf(" ") >= 0) {
+//                 val = "'" + val + "'";
+//             }
 
-            arr.push(key + "=" + val);
-        }
-    }
+//             arr.push(key + "=" + val);
+//         }
+//     }
 
-    return arr.toString();
-}
+//     return arr.toString();
+// }
 
 
 
@@ -39,7 +39,9 @@ var orm = {
     },
 
     insertOne: function(tableName, colVal, newVal, cb) {
-        var queryCommand = "INSERT INTO " + tableName + " (" + colVal.toString() + ") VALUES (\"" + newVal.toString() + "\");";
+
+        var queryCommand = "INSERT INTO " + tableName + " (" + colVal + ") VALUES (\"" + newVal + "\");";
+
         console.log("post queryCommand =", queryCommand);
         connection.query(queryCommand, function(err, res) {
             if(err) {
@@ -49,8 +51,23 @@ var orm = {
                 cb(res);
             }
         });
-    }
+    },
 
+    updateOne: function(tableName, colName, colVal, idMatch, cb) {
+
+        // var queryCommand = UPDATE burgers SET devoured = true WHERE id = 6;
+        var queryCommand = "UPDATE " + tableName + " SET " + colName + " = " + colVal + " WHERE id = " + idMatch;
+        console.log(queryCommand);
+
+        connection.query(queryCommand, function(err, res) {
+            if(err) {
+                throw err;
+            }
+            else {
+                cb(res);
+            }
+        });
+    }
 
 
 

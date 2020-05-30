@@ -16,6 +16,11 @@ var burger = {
         orm.insertOne("burgers", "burger_name", newVal, function(res){
             cb(res);
         });
+    },
+    updateOne: function(colVal, idMatch, cb) {
+        orm.updateOne("burgers", "devoured", colVal, idMatch, function(res) {
+            cb(res);
+        });
     }
 
 };

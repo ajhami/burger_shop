@@ -28,6 +28,29 @@ router.post("/api/burgers", function(req, res) {
     });
 });
 
+router.put("/api/burgers/:id", function(req, res) {
+    var idMatched = req.params.id;
+
+    console.log("Switch at id ", idMatched);
+    var isDevoured = "";
+
+    console.log("Devoured = ", req.body.devoured);
+    if(req.body.devoured === false) {
+        isDevoured = true;
+    }
+    else {
+        isDevoured = false;
+    }
+
+    burger.updateOne(isDevoured, idMatched, function(result) {
+        if(result.changedRows == 0) {
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
+});
+
 
 
 
