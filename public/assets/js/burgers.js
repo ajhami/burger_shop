@@ -26,7 +26,7 @@ $(function(){
             location.reload();
         })
 
-    })
+    });
 
     changeDevouredStatus = function(event) {
         var id = $(this).data("id");
@@ -42,15 +42,22 @@ $(function(){
             location.reload();
         })        
 
-    }
+    };
 
     $(".remake_burger").on("click", changeDevouredStatus);
     $(".devour_burger").on("click", changeDevouredStatus);
 
 
+    $(".delete_burger").on("click", function(event) {
+        var id = $(this).data("id");
 
+        console.log("ID to delete = ", id);
 
-
-
+        $.ajax("/api/burgers/" + id, {
+            type: "DELETE"
+        }).then(function() {
+            location.reload();
+        })
+    });
 
 });

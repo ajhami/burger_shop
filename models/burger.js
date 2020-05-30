@@ -21,19 +21,13 @@ var burger = {
         orm.updateOne("burgers", "devoured", colVal, idMatch, function(res) {
             cb(res);
         });
+    },
+    deleteOne: function(idMatch, cb) {
+        orm.deleteOne("burgers", idMatch, function(res) {
+            cb(res);
+        });
     }
-
 };
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports = burger;

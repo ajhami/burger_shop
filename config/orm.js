@@ -67,6 +67,22 @@ var orm = {
                 cb(res);
             }
         });
+    },
+
+    deleteOne: function(tableName, idMatch, cb) {
+
+        var queryCommand = "DELETE FROM " + tableName + " WHERE id = " + idMatch;
+
+        console.log(queryCommand);
+
+        connection.query(queryCommand, function(err, res) {
+            if(err) {
+                throw err;
+            }
+            else {
+                cb(res);
+            }
+        });
     }
 
 

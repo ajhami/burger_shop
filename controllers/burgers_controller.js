@@ -28,6 +28,7 @@ router.post("/api/burgers", function(req, res) {
     });
 });
 
+
 router.put("/api/burgers/:id", function(req, res) {
     console.log("Mark!");
 
@@ -53,6 +54,19 @@ router.put("/api/burgers/:id", function(req, res) {
     });
 });
 
+
+router.delete("/api/burgers/:id", function(req, res) {
+    var idMatched = req.params.id;
+
+    burger.deleteOne(idMatched, function(result) {
+        if(result.affectedRows == 0) {
+            return res.status(404).end();
+        }
+        else {
+            res.status(200).end();
+        }
+    });
+});
 
 
 
