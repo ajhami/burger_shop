@@ -4,15 +4,22 @@
 
 // Importing mysql node package
 var mysql = require("mysql");
+var connection;
 
 // Used to create connection to database
-var connection = mysql.createConnection({
-	host: "localhost",
-	port: 3306,
-	user: "root",
-	password: "root",
-	database: "burgers_db"
-});
+if(process.env.JAWSDB_URL) {
+	connection = mysql.createConnection(process.env.JAWSDB_URL);
+}
+else {
+	var connection = mysql.createConnection({
+		host: "localhost",
+		port: 3306,
+		user: "root",
+		password: "root",
+		database: "burgers_db"
+	});
+};
+
 
 // Initialize node connection
 connection.connect(function(err) {
