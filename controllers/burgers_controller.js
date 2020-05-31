@@ -35,7 +35,6 @@ router.put("/api/burgers/:id", function(req, res) {
     var idMatched = req.params.id;
     var isDevoured = "";
 
-    console.log("Devoured = ", req.body.devoured);
     if(req.body.devoured == false) {
         isDevoured = true;
     }
