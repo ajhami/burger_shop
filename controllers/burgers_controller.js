@@ -1,40 +1,38 @@
+///////////////////////////
+// BURGERS_CONTROLLER.JS //
+///////////////////////////
+
+
 var express = require("express");
 var router = express.Router();
-
 var burger = require("./../models/burger");
 
+
+// Root route, uploading the main html
 router.get("/", function(req, res) {
-    console.log("Test!");
-    var test = {
-        t1: "test1",
-        t2: "test2"
-    };
+    // Use ORM to grab all stored data from mySQL DB
     burger.selectAll(function(data) {
-        console.log("Made it to callback.");
         var allBurgers = {
             burgers: data
         };
-        console.log(allBurgers);
+        // Using object from mySQL data to render onto handlebars
         res.render("index", allBurgers);
     })
-    // res.render("index", test);
 });
 
+
+// Post route when users submits a new burger
 router.post("/api/burgers", function(req, res) {
-    console.log("Test!");
     burger.insertOne(req.body.burger_name, function(result) {
         res.json({ id: result.id });
-        // res.send("/");
     });
 });
 
 
+// Put route for making changes to burger's eaten state
 router.put("/api/burgers/:id", function(req, res) {
-    console.log("Mark!");
 
     var idMatched = req.params.id;
-
-    console.log("Switch at id ", idMatched);
     var isDevoured = "";
 
     console.log("Devoured = ", req.body.devoured);
@@ -46,6 +44,7 @@ router.put("/api/burgers/:id", function(req, res) {
     }
 
     burger.updateOne(isDevoured, idMatched, function(result) {
+        // If no row was found, resulting in no actual change to db
         if(result.changedRows == 0) {
             return res.status(404).end();
         } else {
@@ -55,6 +54,7 @@ router.put("/api/burgers/:id", function(req, res) {
 });
 
 
+// Delete route for destroying select burgers
 router.delete("/api/burgers/:id", function(req, res) {
     var idMatched = req.params.id;
 

@@ -3,6 +3,8 @@
 ///////////////////
 
 
+// The function from the burger object expand upon the ORM,
+// creating more project specific uses of the mySQL queries
 var orm = require("./../config/orm");
 
 
