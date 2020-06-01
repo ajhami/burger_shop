@@ -1,6 +1,6 @@
-# Eat-Da_Burger!
+# Eat-Da-Burger!
 
-![Project Status](https://img.shields.io/badge/status-in%20progress-yellow)
+![Project Status](https://img.shields.io/badge/status-complete-green)
 ![License](https://img.shields.io/badge/License-wtfpl-blue)
 
 ## Description
@@ -13,7 +13,7 @@ This project is designed using a MVC file structure. The application uses an app
 
 
 ### User Notes
-This application is intended to be launched on Heroku. However, there was an unresolvable error connecting to JAWSDB. The incomplete application can be found at [https://floating-waters-38263.herokuapp.com/](https://floating-waters-38263.herokuapp.com/)
+This application has been to deployed to Heroku and can be view at [https://floating-waters-38263.herokuapp.com/](https://floating-waters-38263.herokuapp.com/). You can also follow the coming instructions to run the application locally.
 
 ### Installation
 To install and run this application locally, clone the repository and run the following git command:
